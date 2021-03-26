@@ -9,6 +9,13 @@ public:
     Row(){
         
     }
+    Row(int n , int k){
+        m=n;
+        for(int i = 1;i<=n;i++){
+            if(i==k){row[i-1] = 1;}
+            else{row[i-1] = 0;}
+        }
+    }
     Row(int m_temp , int row_temp[]){
         m = m_temp;
         for(int i=0;i<m;i++){
@@ -66,6 +73,14 @@ public:
     Matrix(){
 
     };
+    Matrix(int n_temp){
+        n = n_temp;
+        m = n_temp;
+        for(int i=1 ; i<=n_temp ; i++){
+                Row temp(n_temp , i);
+                row_list[i-1] = temp;
+        }
+    }
     Matrix(int m_temp,int n_temp){
         m = m_temp;
         n=n_temp;
